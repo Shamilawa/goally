@@ -1,9 +1,13 @@
 import { useState } from "react"
+import { useAuthContext } from "../hooks/useAuthContext"
 
 
 export const useSignup = () => {
     const [error, setError] = useState(null)
     const [loading, setIsLoading] = useState(null)
+
+    // importing authContext via useAuthContext
+    const { dispatch } = useAuthContext()
 
     const signup = async (fullName, email, password) => {
 
@@ -27,9 +31,10 @@ export const useSignup = () => {
 
         if (response.ok) {
             // save the user to local storage
+            localStorage.setItem("user", JSON.stringify(json))
 
             // update the Authcontext
-            console.log(json);
+            dispatch({ type: "LOGIN", payload: json })
             setIsLoading(false)
         }
     }
