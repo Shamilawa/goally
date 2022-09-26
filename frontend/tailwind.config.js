@@ -11,7 +11,8 @@ module.exports = {
       dark_green: "#4EB787",
       light_blue: "#F1F8FF",
       white: "#ffffff",
-      btn_grey: "rgba(210, 210, 210, 0.25)"
+      btn_grey: "rgba(210, 210, 210, 0.25)",
+      red: "rgb(239 68 68)"
     },
     extend: {
       width: {

@@ -7,6 +7,7 @@ function Button(props) {
     return (
         <motion.button
             className={props.mobile ? 'px-8 py-1 mx-2 bg-grenn rounded text-white font-medium cursor-pointer w-full hover:bg-dark_green' : 'px-8 py-1 bg-grenn rounded text-white font-medium cursor-pointer w-full hover:bg-dark_green'}
+            disabled={props.isLoading}
         >
             {props.children}
         </motion.button>

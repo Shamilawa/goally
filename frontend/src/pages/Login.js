@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 
+// Hooks
+import { useLogin } from '../hooks/useLogin'
+
 // Componenents and pages
 import Button from '../components/Button'
 import Input from '../components/Input'
@@ -10,13 +13,15 @@ function Login() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-    const handleSubmit = (e) => {
+    const { error, loading, login } = useLogin()
+
+    const handleSubmit = async (e) => {
         e.preventDefault()
 
-        console.log(email, password);
+        // login function from useLogin hook
+        login(email, password)
 
         // clear up the states
-        setEmail("")
         setPassword("")
 
     }
@@ -36,12 +41,13 @@ function Login() {
                             <label className='text-primary text-xs block mb-4'>Password</label>
                             <Input value={password} state={setPassword} placeholder={"***********"} type="password" />
 
-                            <Button>
-                                <span className='block text-left py-1 text-sm'>Login</span>
+                            <Button isLoading={loading}>
+                                <span className='block text-left py-1 text-sm -ml-4'>Login</span>
                             </Button>
 
                         </form>
 
+                        {error && <p className='text-center text-xs text-red mb-2 cursor-pointer'>{error}</p>}
                         <p className='text-center text-xs text-primary mb-12 cursor-pointer'>Forgot Password</p>
                         <p className='text-center text-xs text-primary font-normal mb-2'>Don't have an account</p>
                         <p className='text-center text-sm text-primary font-semibold mb-4 cursor-pointer'>Sign up</p>

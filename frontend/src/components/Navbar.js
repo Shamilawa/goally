@@ -14,7 +14,7 @@ function Navbar() {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className='mx-auto flex justify-between items-center py-4 px-2 sm:px-10 bg-white sm:py-6'>
+        <div className='mx-auto flex justify-between items-center py-4 px-2 sm:drop-shadow-sm sm:px-10 bg-white sm:py-6'>
 
             {/* Logo */}
             <div>
@@ -27,15 +27,15 @@ function Navbar() {
             <div>
                 <nav className='relative'>
 
+                    {/* Mobile Menu */}
                     <div className='absolute -mt-2 right-2 sm:hidden z-20'>
                         <HamburgerIcon open={open} onClick={() => setOpen(!open)} />
                     </div>
 
-                    {/* Mobile Menu */}
                     <AnimatePresence>
                         {open &&
                             <motion.ul
-                                className='flex items-center justify-center w-80 h-screen fixed top-0 pointer-events-auto bg-white z-10 sm:hidden'
+                                className='flex items-center justify-center w-80 h-screen fixed top-0 pointer-events-auto z-10 bg-white sm:hidden'
                                 animate={{ right: 0 }}
                                 exit={{ right: "-330px" }}
                             >
