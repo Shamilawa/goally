@@ -7,8 +7,8 @@ module.exports = {
     colors: {
       primary: "#606060",
       secondary: "rgba(96, 96, 96, 0.6)",
-      grenn: "#5FE4A8",
-      dark_green: "#4EB787",
+      grenn: "#06856c",
+      dark_green: "#036552",
       light_blue: "#F1F8FF",
       white: "#ffffff",
       btn_grey: "rgba(210, 210, 210, 0.25)",

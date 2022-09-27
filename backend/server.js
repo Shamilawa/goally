@@ -5,6 +5,7 @@ const cors = require("cors")
 
 // importing routes modules
 const userRoutes = require("./routes/user")
+const goalRoutes = require("./routes/goals")
 
 // setting up app
 const app = express()
@@ -19,6 +20,7 @@ app.get("/", (req, res) => {
 
 // Registering Routes
 app.use("/api/user", userRoutes)
+app.use("/api/goals", goalRoutes)
 
 
 

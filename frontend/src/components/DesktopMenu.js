@@ -70,13 +70,14 @@ function DesktopMenu() {
                             size="1.5em"
                             className="text-primary cursor-pointer mx-3"
                         />
-                        <span className="mx-3 ">{firstName}</span>
                         <img
-                            className="w-12 h-12 mx-3 cursor-pointer"
+                            className="w-8 h-8 mr-4 ml-10 cursor-pointer"
                             src={avatar}
                             alt="avatar"
                             onClick={() => setUserModel(!userModel)}
                         />
+                        <span className=" ">{firstName}</span>
+
                     </div>
 
                     {/* Opening and closing user model card based on state update onClick */}
